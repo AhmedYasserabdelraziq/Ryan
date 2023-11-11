@@ -1,3 +1,4 @@
+import 'package:Ryan/config/routs/routs_names.dart';
 import 'package:Ryan/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -10,16 +11,16 @@ class LoginByPhoneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal:20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 100.0, bottom: 50),
-              child: Image.asset(
-                'assets/images/logo.jpg',
-                height: 350,
-              ),
-            ),
+            Image.asset(
+              'assets/images/logo.jpg',
+              height: 350,
+            ),heightSpace(50),
             SizedBox(
               width: 300,
               child: Text(
@@ -33,9 +34,14 @@ class LoginByPhoneScreen extends StatelessWidget {
               ),
             ),
             heightSpace(60),
-            primaryButton('تسجيل الدخول باستخدام رقم الهاتف',(){
-
-            })
+            primaryButton(
+              title: 'تسجيل الدخول باستخدام رقم الهاتف',
+              onPressed: () {
+                Navigator.of(context).pushNamed(RouteName.PHONE_LOGIN);
+              },
+               //width:double.infinity,
+              // height: 0,
+            )
           ],
         ),
       ),

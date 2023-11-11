@@ -4,6 +4,6 @@ import '../../../config/routs/routs_names.dart';
 
 class SplashScreenViewModel extends ChangeNotifier {
   void firstOpen(context) {
-    Navigator.of(context).pushNamed(RouteName.LOGIN_BY_PHONE);
+    Navigator.of(context).pushNamed(RouteName.BEGIN_PHONE_LOGIN);
   }
 }
