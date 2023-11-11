@@ -2,21 +2,27 @@ import 'package:flutter/material.dart';
 
 import '../utils/colors.dart';
 
-Widget primaryButton(String title) {
-  return Container(
-    width: 150,
-    height: 37,
-    alignment: Alignment.center,
-    //padding: const EdgeInsets.symmetric(vertical: 16),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(30),
-      color: AppColors.primary,
+Widget primaryButton(String title,void Function() onPressed) {
+  return ElevatedButton(
+    style: ButtonStyle(
+      // minimumSize: const MaterialStatePropertyAll(
+      //   Size(350, 45),
+      // ),
+      shape: MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
+      ),
+      alignment: Alignment.center,
+      backgroundColor: MaterialStatePropertyAll(AppColors.primary),
     ),
+    onPressed: onPressed,
     child: Text(
       title,
       style: TextStyle(
         color: AppColors.whiteColor,
-        fontSize: 15,
+        fontSize: 20,
+        fontWeight: FontWeight.bold
       ),
     ),
   );

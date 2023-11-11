@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../config/routs/routs_names.dart';
 
 class SplashScreenViewModel extends ChangeNotifier {
   void firstOpen(context) {
-    //Navigator.of(context).pushNamed(RouteName.HOME);
+    Navigator.of(context).pushNamed(RouteName.LOGIN_BY_PHONE);
   }
 }
