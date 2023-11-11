@@ -1,3 +1,4 @@
+import 'package:Ryan/core/utils/colors.dart';
 import 'package:Ryan/screens/splash_screen/view/splash_screen.dart';
 import 'package:Ryan/screens/splash_screen/view_model/splash_screen_viewmodel.dart';
 import 'package:Ryan/services/services_locator.dart';
@@ -8,6 +9,7 @@ import 'config/routs/app_router.dart';
 import 'config/routs/routs_names.dart';
 
 void main() async {
+  Provider.debugCheckInvalidValueType = null;
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   runApp(const MyApp());
@@ -28,6 +30,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Ryan',
         theme: ThemeData(
+          colorScheme: ColorScheme.light(
+            primary: AppColors.fourthColor,
+          ),
           useMaterial3: true,
         ),
         home: const SplashScreen(),
