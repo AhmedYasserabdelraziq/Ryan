@@ -12,7 +12,7 @@ class LoginByPhoneScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,13 +20,13 @@ class LoginByPhoneScreen extends StatelessWidget {
             Image.asset(
               'assets/images/logo.jpg',
               height: 350,
-            ),heightSpace(50),
+            ),
+            heightSpace(50),
             SizedBox(
               width: 300,
               child: Text(
                 textAlign: TextAlign.center,
                 'مرحبا بكم في بيوند بلس خدماتنا متاحه ٢٤/۷ ',
-                textDirection: TextDirection.rtl,
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -39,7 +39,7 @@ class LoginByPhoneScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamed(RouteName.PHONE_LOGIN);
               },
-               //width:double.infinity,
+              //width:double.infinity,
               // height: 0,
             )
           ],

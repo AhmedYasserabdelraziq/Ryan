@@ -21,7 +21,7 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
@@ -31,13 +31,20 @@ class TextFieldWidget extends StatelessWidget {
             color: AppColors.thirdColor,
           ),
           textAlign: TextAlign.end,
-          textDirection: TextDirection.rtl,
         ),
         heightSpace(5),
         TextFormField(
+          textAlign: TextAlign.right  ,
           controller: controller,
           keyboardType: keyboardType,
-          decoration: const InputDecoration(
+          textDirection: TextDirection.rtl,
+          cursorColor: AppColors.secondaryColor,
+          decoration: InputDecoration(
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                  color: AppColors.secondaryColor,
+                  width: 2.0), // Change the color and width as needed
+            ),
           ),
         ),
       ],

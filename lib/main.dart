@@ -4,7 +4,7 @@ import 'package:Ryan/screens/splash_screen/view_model/splash_screen_viewmodel.da
 import 'package:Ryan/services/services_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'config/routs/app_router.dart';
 import 'config/routs/routs_names.dart';
 
@@ -12,7 +12,12 @@ void main() async {
   Provider.debugCheckInvalidValueType = null;
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
-  runApp(const MyApp());
+  runApp(
+    const Directionality(
+      textDirection: TextDirection.rtl,
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -27,6 +32,15 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        locale: const Locale('ar', 'AE'),
+        supportedLocales: const [
+          Locale('ar', 'AE'),
+        ],
         debugShowCheckedModeBanner: false,
         title: 'Ryan',
         theme: ThemeData(
