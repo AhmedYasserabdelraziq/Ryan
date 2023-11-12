@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         const Duration(
           seconds: 3,
         ), () {
-      viewModel.firstOpen(context);
+      viewModel.splashOpen(context);
     });
 
     super.initState();

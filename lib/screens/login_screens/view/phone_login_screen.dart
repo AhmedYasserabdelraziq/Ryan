@@ -28,7 +28,7 @@ class PhoneLoginView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 12, right: 12, bottom: 50),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'أدخل رقم هاتفك المحمول',
@@ -36,7 +36,6 @@ class PhoneLoginView extends StatelessWidget {
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
-              textDirection: TextDirection.rtl,
             ),
             heightSpace(30),
             Consumer<LoginByPhoneViewModel>(
@@ -54,7 +53,7 @@ class PhoneLoginView extends StatelessWidget {
             primaryButton(
               title: 'متابعه',
               onPressed: () {},
-               //width:double.infinity,
+              //width:double.infinity,
               // height: 0,
             )
           ],
