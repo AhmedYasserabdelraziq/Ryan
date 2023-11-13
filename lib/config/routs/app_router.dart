@@ -1,6 +1,7 @@
 import 'package:Ryan/config/routs/routs_names.dart';
 import 'package:Ryan/screens/login_screens/view/begin_phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/phone_login_screen.dart';
+import 'package:Ryan/screens/login_screens/view/verify_phone_number_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../screens/splash_screen/view/splash_screen.dart';
@@ -19,6 +20,10 @@ class AppRouter {
       case RouteName.PHONE_LOGIN:
         return MaterialPageRoute(
           builder: ((context) => const PhoneLoginScreen()),
+        );
+      case RouteName.VERIFY_PHONE:
+        return MaterialPageRoute(
+          builder: ((context) => const VerifyPhoneScreen()),
         );
       default:
         return notFound();

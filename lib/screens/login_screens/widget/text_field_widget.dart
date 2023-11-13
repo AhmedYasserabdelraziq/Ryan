@@ -1,5 +1,3 @@
-import 'dart:ui' as ui;
-
 import 'package:Ryan/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -34,38 +32,28 @@ class TextFieldWidget extends StatelessWidget {
         ),
         heightSpace(5),
         TextFormField(
-          textAlign: TextAlign.right  ,
+          textAlign: TextAlign.right,
           controller: controller,
           keyboardType: keyboardType,
           textDirection: TextDirection.rtl,
-          cursorColor: AppColors.secondaryColor,
-          decoration: InputDecoration(
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: AppColors.secondaryColor,
-                  width: 2.0), // Change the color and width as needed
-            ),
-          ),
+          decoration: const InputDecoration(),
         ),
       ],
     );
   }
 }
 
-Container verifyTextField() {
-  return Container(
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(16),
-      color: const Color(0x0f8a8585),
-    ),
-    width: 56,
-    height: 56,
-    child: TextFormField(
+Widget verifyTextField() {
+  return Expanded(
+    child: TextField(
         textAlign: TextAlign.center,
         style: const TextStyle(fontSize: 24),
         keyboardType: TextInputType.number,
         decoration: const InputDecoration(
-          border: InputBorder.none,
+          enabledBorder: UnderlineInputBorder(
+            borderSide:
+                BorderSide(width: 2.0), // Change the color and width as needed
+          ),
         ),
         inputFormatters: [
           LengthLimitingTextInputFormatter(1),
@@ -74,16 +62,17 @@ Container verifyTextField() {
 }
 
 Widget verifyCodeWidget() {
-  return Directionality(
-    textDirection: ui.TextDirection.ltr,
-    child: Row(children: [
-      verifyTextField(),
-      widthSpace(24),
-      verifyTextField(),
-      widthSpace(24),
-      verifyTextField(),
-      widthSpace(24),
-      verifyTextField(),
-    ]),
-  );
+  return Row(children: [
+    verifyTextField(),
+    widthSpace(24),
+    verifyTextField(),
+    widthSpace(24),
+    verifyTextField(),
+    widthSpace(24),
+    verifyTextField(),
+    widthSpace(24),
+    verifyTextField(),
+    widthSpace(24),
+    verifyTextField(),
+  ]);
 }

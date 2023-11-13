@@ -25,34 +25,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(
-          value: locator<SplashScreenViewModel>(),
-        ),
+    return MaterialApp(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
-      child: MaterialApp(
-        localizationsDelegates: const [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        locale: const Locale('ar', 'AE'),
-        supportedLocales: const [
-          Locale('ar', 'AE'),
-        ],
-        debugShowCheckedModeBanner: false,
-        title: 'Ryan',
-        theme: ThemeData(
-          colorScheme: ColorScheme.light(
-            primary: AppColors.fourthColor,
-          ),
-          useMaterial3: true,
+      locale: const Locale('ar', 'AE'),
+      supportedLocales: const [
+        Locale('ar', 'AE'),
+      ],
+      debugShowCheckedModeBanner: false,
+      title: 'Ryan',
+      theme: ThemeData(
+        colorScheme: ColorScheme.light(
+          primary: AppColors.fourthColor,
         ),
-        home: const SplashScreen(),
-        initialRoute: RouteName.SPLASH,
-        onGenerateRoute: AppRouter.generateRoute,
+        useMaterial3: true,
       ),
+      home: const SplashScreen(),
+      initialRoute: RouteName.SPLASH,
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }
