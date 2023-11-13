@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../services/services_locator.dart';
 import '../view_model/splash_screen_viewmodel.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+        create: (BuildContext context) => locator<SplashScreenViewModel>(),
+        child: const SplashView());
+  }
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     final viewModel = locator<SplashScreenViewModel>();

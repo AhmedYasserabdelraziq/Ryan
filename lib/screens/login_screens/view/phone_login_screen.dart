@@ -1,3 +1,4 @@
+import 'package:Ryan/config/routs/routs_names.dart';
 import 'package:Ryan/core/utils/common_functions.dart';
 import 'package:Ryan/core/widget/app_buttons.dart';
 import 'package:Ryan/screens/login_screens/widget/text_field_widget.dart';
@@ -12,9 +13,10 @@ class PhoneLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Provider(
-        create: (BuildContext context) => locator<LoginByPhoneViewModel>(),
-        child: const PhoneLoginView());
+    return ChangeNotifierProvider(
+      create: (BuildContext context) => locator<LoginByPhoneViewModel>(),
+      child: const PhoneLoginView(),
+    );
   }
 }
 
@@ -52,7 +54,10 @@ class PhoneLoginView extends StatelessWidget {
             ),
             primaryButton(
               title: 'متابعه',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .pushReplacementNamed(RouteName.VERIFY_PHONE);
+              },
               //width:double.infinity,
               // height: 0,
             )

@@ -6,6 +6,6 @@ import '../screens/splash_screen/view_model/splash_screen_viewmodel.dart';
 GetIt locator = GetIt.instance;
 
 Future setupLocator() async {
-  locator.registerLazySingleton(() => SplashScreenViewModel());
+  locator.registerFactory(() => SplashScreenViewModel());
   locator.registerLazySingleton(() => LoginByPhoneViewModel());
 }
