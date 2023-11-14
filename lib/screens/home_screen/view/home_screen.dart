@@ -5,6 +5,7 @@ import 'package:Ryan/services/services_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widget/container_body.dart';
 import '../widget/tabBar_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -66,6 +67,17 @@ class HomeView extends StatelessWidget {
             ]),
           ),
           heightSpace(45),
+          Expanded(
+            child: Consumer<HomeScreenViewModel>(builder: (ctx, viewModel, _) {
+              return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    ContainerBody(
+                      viewModel: viewModel,
+                    ),
+                  ]);
+            }),
+          ),
         ],
       ),
     );

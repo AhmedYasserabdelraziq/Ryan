@@ -9,4 +9,5 @@ class AppColors {
   static Color fourthColor = HexColor('#BBF2ED');
   static Color greyColor = HexColor('#F2F2F2');
   static Color whiteColor = HexColor('#FFFFFF');
+  static Color redColor = HexColor('#FF0000');
 }

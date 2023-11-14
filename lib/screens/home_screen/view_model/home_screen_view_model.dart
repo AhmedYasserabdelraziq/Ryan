@@ -1,18 +1,52 @@
 import 'package:flutter/material.dart';
 
 class HomeScreenViewModel extends ChangeNotifier {
-  String selectDropValue = '1';
+  static int selectDropValueGroup1 = 1;
+  static int selectDropValueGroup2 = 1;
+  static int selectDropValueGroup3 = 1;
+  static int selectDropValueGroup4 = 1;
+  static int selectDropValueGroup5 = 1;
+
+  List<int> selectedValueGroup = [
+    selectDropValueGroup1,
+    selectDropValueGroup2,
+    selectDropValueGroup3,
+    selectDropValueGroup4,
+    selectDropValueGroup5,
+
+  ];
   List titles = ['فئه', 'محافظة', 'منطقة', 'نوع مقدم الخدمة', 'التخصص'];
 
-  List<String> body1 = ['1', '2', '3', '4', '5', '6', '7', '8'];
+  List<List<int>> dropValues = [
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+  ];
 
-  // List body2 = [1, 2, 3, 4, 5, 6, 7, 8];
-  // List body3 = [1, 2, 3, 4, 5, 6, 7, 8];
-  // List body4 = [1, 2, 3, 4, 5, 6, 7, 8];
-  // List body5 = [1, 2, 3, 4, 5, 6, 7, 8];
-
-  void selectValues(String selectValue) {
-    selectDropValue = selectValue;
-    notifyListeners();
+  selectValues(var selectValue, int index) {
+    if (index == 0) {
+      selectedValueGroup[0] = selectValue;
+      print('$index $selectValue');
+      notifyListeners();
+    } else if (index == 1) {
+      selectedValueGroup[1] = selectValue;
+      print('$index $selectValue');
+      notifyListeners();
+    } else if (index == 2) {
+      selectedValueGroup[2] = selectValue;
+      print('$index $selectValue');
+      notifyListeners();
+    } else if (index == 3) {
+      selectedValueGroup[3] = selectValue;
+      print('$index $selectValue');
+      notifyListeners();
+    } else if (index == 4) {
+      selectedValueGroup[4] = selectValue;
+      print('$index $selectValue');
+      notifyListeners();
+    }
   }
 }
