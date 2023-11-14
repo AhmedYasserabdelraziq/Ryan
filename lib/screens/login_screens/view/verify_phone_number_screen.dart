@@ -27,7 +27,7 @@ class VerifyPhoneScreen extends StatelessWidget {
               ),
             ),
             heightSpace(30),
-            verifyCodeWidget(),
+            verifyCodeWidget(context),
             heightSpace(10),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -40,12 +40,18 @@ class VerifyPhoneScreen extends StatelessWidget {
                     decoration: TextDecoration.underline,
                   ),
                 ).onTap(() {
-                  Navigator.of(context).pushReplacementNamed(RouteName.PHONE_LOGIN);
+                  Navigator.of(context)
+                      .pushReplacementNamed(RouteName.PHONE_LOGIN);
                 })
               ],
             ),
             Expanded(child: heightSpace(1)),
-            primaryButton(title: 'متابعه', onPressed: () {})
+            primaryButton(
+                title: 'متابعه',
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil(RouteName.HOME, (r) => false);
+                })
           ],
         ),
       ),

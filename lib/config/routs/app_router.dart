@@ -1,4 +1,5 @@
 import 'package:Ryan/config/routs/routs_names.dart';
+import 'package:Ryan/screens/home_screen/view/home_screen.dart';
 import 'package:Ryan/screens/login_screens/view/begin_phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/verify_phone_number_screen.dart';
@@ -24,6 +25,10 @@ class AppRouter {
       case RouteName.VERIFY_PHONE:
         return MaterialPageRoute(
           builder: ((context) => const VerifyPhoneScreen()),
+        );
+      case RouteName.HOME:
+        return MaterialPageRoute(
+          builder: ((context) => const HomeScreen()),
         );
       default:
         return notFound();
