@@ -43,9 +43,14 @@ class TextFieldWidget extends StatelessWidget {
   }
 }
 
-Widget verifyTextField() {
+Widget verifyTextField(context) {
   return Expanded(
-    child: TextField(
+    child: TextFormField(
+        onChanged: (value) {
+          if (value.length == 1) {
+            FocusScope.of(context).nextFocus();
+          }
+        },
         textAlign: TextAlign.center,
         style: const TextStyle(fontSize: 24),
         keyboardType: TextInputType.number,
@@ -61,18 +66,18 @@ Widget verifyTextField() {
   );
 }
 
-Widget verifyCodeWidget() {
+Widget verifyCodeWidget(context) {
   return Row(children: [
-    verifyTextField(),
+    verifyTextField(context),
     widthSpace(24),
-    verifyTextField(),
+    verifyTextField(context),
     widthSpace(24),
-    verifyTextField(),
+    verifyTextField(context),
     widthSpace(24),
-    verifyTextField(),
+    verifyTextField(context),
     widthSpace(24),
-    verifyTextField(),
+    verifyTextField(context),
     widthSpace(24),
-    verifyTextField(),
+    verifyTextField(context),
   ]);
 }
