@@ -1,6 +1,7 @@
 import 'package:Ryan/core/utils/colors.dart';
 import 'package:Ryan/core/utils/common_functions.dart';
 import 'package:Ryan/screens/home_screen/view_model/home_screen_view_model.dart';
+import 'package:Ryan/screens/home_screen/widget/drawer.dart';
 import 'package:Ryan/services/services_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +27,9 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Icon(Icons.add),
+      drawer: const Drawer(
+        child: HomeDrawer(),
+      ),
       backgroundColor: AppColors.primary,
       appBar: AppBar(
         backgroundColor: AppColors.primary,
