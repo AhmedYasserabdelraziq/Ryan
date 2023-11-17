@@ -1,6 +1,4 @@
 import 'package:Ryan/core/utils/colors.dart';
-import 'package:Ryan/screens/result_screen/view/result_screen.dart';
-import 'package:Ryan/screens/splash_screen/view/splash_screen.dart';
 import 'package:Ryan/services/services_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

@@ -5,4 +5,5 @@ class RouteName {
   static const String VERIFY_PHONE = '/verify_phone';
   static const String HOME = '/home';
   static const String RESULT = '/result';
+  static const String COMMON_QUESTION = '/question';
 }

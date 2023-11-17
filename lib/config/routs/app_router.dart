@@ -1,4 +1,5 @@
 import 'package:Ryan/config/routs/routs_names.dart';
+import 'package:Ryan/screens/common_questions_screen/view/common_question_screen.dart';
 import 'package:Ryan/screens/home_screen/view/home_screen.dart';
 import 'package:Ryan/screens/login_screens/view/begin_phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/phone_login_screen.dart';
@@ -34,6 +35,9 @@ class AppRouter {
       case RouteName.RESULT:
         return MaterialPageRoute(
           builder: ((context) => const ResultScreen()),
+        ); case RouteName.COMMON_QUESTION:
+        return MaterialPageRoute(
+          builder: ((context) => const CommonQuestionScreen()),
         );
       default:
         return notFound();
