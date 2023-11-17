@@ -1,6 +1,6 @@
 import 'package:Ryan/core/utils/common_functions.dart';
 import 'package:Ryan/screens/result_screen/view_model/result_screen_view_model.dart';
-import 'package:expandable/expandable.dart';
+import 'package:Ryan/screens/result_screen/widget/result_details.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -57,7 +57,15 @@ class ResultView extends StatelessWidget {
                       ),
                       heightSpace(10),
                       SearchWidget(viewModel: viewModel),
-
+                      heightSpace(25),
+                      Expanded(
+                        child: ListView.builder(
+                          itemBuilder: (BuildContext context, int index) {
+                            return const CardResultDetails();
+                          },
+                          itemCount: 5,
+                        ),
+                      )
                     ]);
               }),
             ),
