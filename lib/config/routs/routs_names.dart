@@ -4,4 +4,5 @@ class RouteName {
   static const String PHONE_LOGIN = '/phone_login';
   static const String VERIFY_PHONE = '/verify_phone';
   static const String HOME = '/home';
+  static const String RESULT = '/result';
 }

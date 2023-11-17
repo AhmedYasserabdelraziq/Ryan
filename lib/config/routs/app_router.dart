@@ -3,6 +3,7 @@ import 'package:Ryan/screens/home_screen/view/home_screen.dart';
 import 'package:Ryan/screens/login_screens/view/begin_phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/verify_phone_number_screen.dart';
+import 'package:Ryan/screens/result_screen/view/result_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../screens/splash_screen/view/splash_screen.dart';
@@ -29,6 +30,10 @@ class AppRouter {
       case RouteName.HOME:
         return MaterialPageRoute(
           builder: ((context) => const HomeScreen()),
+        );
+      case RouteName.RESULT:
+        return MaterialPageRoute(
+          builder: ((context) => const ResultScreen()),
         );
       default:
         return notFound();
