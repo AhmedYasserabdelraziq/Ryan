@@ -1,3 +1,4 @@
+import 'package:Ryan/config/routs/routs_names.dart';
 import 'package:Ryan/core/utils/common_functions.dart';
 import 'package:Ryan/core/widget/app_buttons.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,11 @@ class ContainerBody extends StatelessWidget {
               ],
             ),
             heightSpace(15),
-            primaryButton(title: 'بحث', onPressed: () {})
+            primaryButton(
+                title: 'بحث',
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RouteName.RESULT);
+                })
           ],
         ),
       ),

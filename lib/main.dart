@@ -1,10 +1,11 @@
 import 'package:Ryan/core/utils/colors.dart';
+import 'package:Ryan/screens/result_screen/view/result_screen.dart';
 import 'package:Ryan/screens/splash_screen/view/splash_screen.dart';
-import 'package:Ryan/screens/splash_screen/view_model/splash_screen_viewmodel.dart';
 import 'package:Ryan/services/services_locator.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
+
 import 'config/routs/app_router.dart';
 import 'config/routs/routs_names.dart';
 
@@ -43,7 +44,6 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
       initialRoute: RouteName.SPLASH,
       onGenerateRoute: AppRouter.generateRoute,
     );
