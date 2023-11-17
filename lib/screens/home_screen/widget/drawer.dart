@@ -1,3 +1,4 @@
+import 'package:Ryan/config/routs/routs_names.dart';
 import 'package:Ryan/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -60,7 +61,10 @@ class HomeDrawer extends StatelessWidget {
               title: Text('الأسئلة الشائعة',
                   style: TextStyle(
                       color: AppColors.whiteColor,
-                      fontWeight: FontWeight.bold))),
+                      fontWeight: FontWeight.bold)),
+              onTap: () {
+                Navigator.of(context).pushNamed(RouteName.COMMON_QUESTION);
+              }),
           ListTile(
               leading: SvgPicture.asset('assets/icons/comment-alert.svg',
                   color: AppColors.whiteColor),

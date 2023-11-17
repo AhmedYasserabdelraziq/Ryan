@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/utils/colors.dart';
-import '../widget/search_widget.dart';
+import '../../../core/widget/search_widget.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
@@ -56,7 +56,14 @@ class ResultView extends StatelessWidget {
                         ),
                       ),
                       heightSpace(10),
-                      SearchWidget(viewModel: viewModel),
+                      SearchWidget(
+                        viewModel: viewModel,
+                        isButtonSearch: true,
+                        color: AppColors.primary,
+                        iconColor: AppColors.whiteColor,
+                        textTypingColor: AppColors.whiteColor,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
                       heightSpace(25),
                       Expanded(
                         child: ListView.builder(
