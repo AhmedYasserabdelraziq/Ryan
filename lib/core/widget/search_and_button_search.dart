@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../core/utils/colors.dart';
 import '../../../core/utils/common_functions.dart';
 
-class SearchWidget extends StatelessWidget {
+class SearchAndButtonSearch extends StatelessWidget {
   final ResultScreenViewModel? viewModel;
   final BorderRadius borderRadius;
   final bool isButtonSearch;
@@ -12,7 +12,7 @@ class SearchWidget extends StatelessWidget {
   final Color iconColor;
   final Color textTypingColor;
 
-  const SearchWidget({
+  const SearchAndButtonSearch({
     super.key,
     this.viewModel,
     required this.isButtonSearch,
@@ -30,7 +30,7 @@ class SearchWidget extends StatelessWidget {
             ? TextButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                    minimumSize: const MaterialStatePropertyAll(Size(70, 0)),
+                    minimumSize: const MaterialStatePropertyAll(Size(70, 40)),
                     backgroundColor:
                         MaterialStatePropertyAll(AppColors.redColor)),
                 child: const Text(
@@ -45,15 +45,14 @@ class SearchWidget extends StatelessWidget {
             height: 50,
             child: Container(
               decoration: BoxDecoration(
-                border: isButtonSearch
-                    ? Border.all(
-                        color: AppColors.fourthColor,
-                        width: .5,
-                      )
-                    : null,
-                color: color,
-                borderRadius: borderRadius
-              ),
+                  border: isButtonSearch
+                      ? Border.all(
+                          color: AppColors.fourthColor,
+                          width: .5,
+                        )
+                      : null,
+                  color: color,
+                  borderRadius: borderRadius),
               child: Row(
                 children: [
                   Padding(

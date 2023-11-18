@@ -18,7 +18,7 @@ class ContainerBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.only(top: 19, right: 12, left: 12, bottom: 8),
+        padding: const EdgeInsets.only(top: 19, right: 12, left: 12),
         decoration: BoxDecoration(
           color: AppColors.whiteColor,
           borderRadius: const BorderRadius.only(
@@ -26,33 +26,36 @@ class ContainerBody extends StatelessWidget {
             topRight: Radius.circular(15),
           ),
         ),
-        child: Column(
-          children: [
-            Wrap(
-              children: titleWithDropDownButton(),
-            ),
-            heightSpace(5),
-            Row(
-              children: [
-                Text(
-                  '*',
-                  style: TextStyle(color: AppColors.redColor),
-                ),
-                widthSpace(3),
-                const Expanded(
-                  child: Text(
-                    'شركة الخدمة الطبية هي شركة متعاقد معها من قبل شركات التأمين الخاضعة لرقابة الهيئة العامة للرقابة المالية',
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Wrap(
+                children: titleWithDropDownButton(),
+              ),
+              heightSpace(5),
+              Row(
+                children: [
+                  Text(
+                    '*',
+                    style: TextStyle(color: AppColors.redColor),
                   ),
-                ),
-              ],
-            ),
-            heightSpace(15),
-            primaryButton(
-                title: 'بحث',
-                onPressed: () {
-                  Navigator.of(context).pushNamed(RouteName.RESULT);
-                })
-          ],
+                  widthSpace(3),
+                  const Expanded(
+                    child: Text(
+                      'شركة الخدمة الطبية هي شركة متعاقد معها من قبل شركات التأمين الخاضعة لرقابة الهيئة العامة للرقابة المالية',
+                    ),
+                  ),
+                ],
+              ),
+              heightSpace(15),
+              primaryButton(
+                  title: 'بحث',
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(RouteName.RESULT);
+                  }),
+              heightSpace(8),
+            ],
+          ),
         ),
       ),
     );
