@@ -4,6 +4,7 @@ import 'package:Ryan/screens/home_screen/view/home_screen.dart';
 import 'package:Ryan/screens/login_screens/view/begin_phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/verify_phone_number_screen.dart';
+import 'package:Ryan/screens/medical_services_screen/view/medical_services_screen.dart';
 import 'package:Ryan/screens/result_screen/view/result_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -35,9 +36,14 @@ class AppRouter {
       case RouteName.RESULT:
         return MaterialPageRoute(
           builder: ((context) => const ResultScreen()),
-        ); case RouteName.COMMON_QUESTION:
+        );
+      case RouteName.COMMON_QUESTION:
         return MaterialPageRoute(
           builder: ((context) => const CommonQuestionScreen()),
+        );
+      case RouteName.MEDICAL_SERVICES:
+        return MaterialPageRoute(
+          builder: ((context) => const MedicalServices()),
         );
       default:
         return notFound();

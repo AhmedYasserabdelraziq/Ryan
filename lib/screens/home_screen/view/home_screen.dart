@@ -1,11 +1,11 @@
 import 'package:Ryan/core/utils/colors.dart';
 import 'package:Ryan/core/utils/common_functions.dart';
 import 'package:Ryan/screens/home_screen/view_model/home_screen_view_model.dart';
-import 'package:Ryan/screens/home_screen/widget/drawer.dart';
 import 'package:Ryan/services/services_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/widget/drawer.dart';
 import '../widget/container_body.dart';
 import '../widget/tabBar_widget.dart';
 
@@ -69,17 +69,17 @@ class HomeView extends StatelessWidget {
             ]),
           ),
           heightSpace(45),
-          Expanded(
-            child: Consumer<HomeScreenViewModel>(builder: (ctx, viewModel, _) {
-              return Column(
+          Consumer<HomeScreenViewModel>(builder: (ctx, viewModel, _) {
+            return Expanded(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     ContainerBody(
                       viewModel: viewModel,
                     ),
-                  ]);
-            }),
-          ),
+                  ]),
+            );
+          }),
         ],
       ),
     );

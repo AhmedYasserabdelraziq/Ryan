@@ -1,8 +1,8 @@
-import 'package:Ryan/screens/home_screen/widget/drawer.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/colors.dart';
-import '../../../core/widget/search_widget.dart';
+import '../../../core/widget/drawer.dart';
+import '../../../core/widget/search_and_button_search.dart';
 import '../widget/question_details.dart';
 
 class CommonQuestionScreen extends StatelessWidget {
@@ -29,7 +29,7 @@ class CommonQuestionScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(left: 20, bottom: 20),
             color: AppColors.whiteColor,
-            child: SearchWidget(
+            child: SearchAndButtonSearch(
               isButtonSearch: false,
               color: AppColors.greyColor,
               iconColor: AppColors.blackColor,

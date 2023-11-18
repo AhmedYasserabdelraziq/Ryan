@@ -28,19 +28,25 @@ class HomeDrawer extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
               child: Divider(height: 1, color: AppColors.whiteColor)),
           ListTile(
-              leading: SvgPicture.asset('assets/icons/home-outline.svg',
-                  color: AppColors.whiteColor),
-              title: Text('الصفحة الرئيسية',
-                  style: TextStyle(
-                      color: AppColors.whiteColor,
-                      fontWeight: FontWeight.bold))),
+            leading: SvgPicture.asset('assets/icons/home_outline.svg',
+                color: AppColors.whiteColor),
+            title: Text('الصفحة الرئيسية',
+                style: TextStyle(
+                    color: AppColors.whiteColor, fontWeight: FontWeight.bold)),
+            onTap: () {
+              Navigator.of(context).pushNamed(RouteName.HOME);
+            },
+          ),
           ListTile(
-              leading: SvgPicture.asset('assets/icons/map-pin-add-line.svg',
-                  color: AppColors.whiteColor),
-              title: Text('الشبكة الطبية',
-                  style: TextStyle(
-                      color: AppColors.whiteColor,
-                      fontWeight: FontWeight.bold))),
+            leading: SvgPicture.asset('assets/icons/map_add.svg',
+                color: AppColors.whiteColor),
+            title: Text('الشبكة الطبية',
+                style: TextStyle(
+                    color: AppColors.whiteColor, fontWeight: FontWeight.bold)),
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.MEDICAL_SERVICES);
+            },
+          ),
           ListTile(
               leading: Icon(Icons.person_outline_rounded,
                   color: AppColors.whiteColor),
@@ -56,7 +62,7 @@ class HomeDrawer extends StatelessWidget {
                       color: AppColors.whiteColor,
                       fontWeight: FontWeight.bold))),
           ListTile(
-              leading: SvgPicture.asset('assets/icons/question-icon.svg',
+              leading: SvgPicture.asset('assets/icons/question_icon.svg',
                   width: 26, color: AppColors.whiteColor),
               title: Text('الأسئلة الشائعة',
                   style: TextStyle(
@@ -66,7 +72,7 @@ class HomeDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(RouteName.COMMON_QUESTION);
               }),
           ListTile(
-              leading: SvgPicture.asset('assets/icons/comment-alert.svg',
+              leading: SvgPicture.asset('assets/icons/comment_alert.svg',
                   color: AppColors.whiteColor),
               title: Text('تقديم شكوي',
                   style: TextStyle(
