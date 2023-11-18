@@ -72,12 +72,15 @@ class HomeDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(RouteName.COMMON_QUESTION);
               }),
           ListTile(
-              leading: SvgPicture.asset('assets/icons/comment_alert.svg',
-                  color: AppColors.whiteColor),
-              title: Text('تقديم شكوي',
-                  style: TextStyle(
-                      color: AppColors.whiteColor,
-                      fontWeight: FontWeight.bold))),
+            leading: SvgPicture.asset('assets/icons/comment_alert.svg',
+                color: AppColors.whiteColor),
+            title: Text('تقديم شكوي',
+                style: TextStyle(
+                    color: AppColors.whiteColor, fontWeight: FontWeight.bold)),
+            onTap: () {
+              Navigator.of(context).pushNamed(RouteName.COMPLAINTSSUBMISSOIN);
+            },
+          ),
           ListTile(
               leading: Icon(Icons.exit_to_app, color: AppColors.whiteColor),
               title: Text('تسجيل الخروج',

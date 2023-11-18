@@ -64,41 +64,41 @@ class ContainerBody extends StatelessWidget {
   List<Widget> titleWithDropDownButton() {
     return List.generate(
       5,
-      (index) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text(
+      (index) => Padding(
+        padding: const EdgeInsets.only(top: 8.0,left: 5.0,right: 5.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
               viewModel.titles[index],
               style: const TextStyle(fontSize: 18),
             ),
-          ),
-          DropdownButton(
-            value: viewModel.selectedValueGroup[index],
-            icon: const Icon(Icons.arrow_drop_down),
-            elevation: 16,
-            isExpanded: true,
-            style: TextStyle(color: AppColors.thirdColor),
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            underline: Container(
-              height: 2,
-              color: AppColors.greyColor,
+            DropdownButton(
+              value: viewModel.selectedValueGroup[index],
+              icon: const Icon(Icons.arrow_drop_down),
+              elevation: 16,
+              isExpanded: true,
+              style: TextStyle(color: AppColors.thirdColor),
+              //padding: const EdgeInsets.symmetric(horizontal: 8),
+              underline: Container(
+                height: 2,
+                color: AppColors.greyColor,
+              ),
+              onChanged: (value) {
+                viewModel.selectValues(value, index);
+              },
+              items: viewModel.dropValues[index]
+                  .map<DropdownMenuItem>(
+                    (value) => DropdownMenuItem(
+                      value: value,
+                      child: Text(value.toString()),
+                    ),
+                  )
+                  .toList(),
+              iconSize: 30,
             ),
-            onChanged: (value) {
-              viewModel.selectValues(value, index);
-            },
-            items: viewModel.dropValues[index]
-                .map<DropdownMenuItem>(
-                  (value) => DropdownMenuItem(
-                    value: value,
-                    child: Text(value.toString()),
-                  ),
-                )
-                .toList(),
-            iconSize: 30,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

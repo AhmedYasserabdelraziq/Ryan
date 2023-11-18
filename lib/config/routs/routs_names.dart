@@ -7,4 +7,5 @@ class RouteName {
   static const String RESULT = '/result';
   static const String COMMON_QUESTION = '/question';
   static const String MEDICAL_SERVICES = '/medical_services';
+  static const String COMPLAINTSSUBMISSOIN = '/complaints_submission';
 }
