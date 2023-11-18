@@ -1,5 +1,6 @@
 import 'package:Ryan/config/routs/routs_names.dart';
 import 'package:Ryan/screens/common_questions_screen/view/common_question_screen.dart';
+import 'package:Ryan/screens/complaints_submission_screen/view/complaints_submission_screen.dart';
 import 'package:Ryan/screens/home_screen/view/home_screen.dart';
 import 'package:Ryan/screens/login_screens/view/begin_phone_login_screen.dart';
 import 'package:Ryan/screens/login_screens/view/phone_login_screen.dart';
@@ -44,6 +45,10 @@ class AppRouter {
       case RouteName.MEDICAL_SERVICES:
         return MaterialPageRoute(
           builder: ((context) => const MedicalServices()),
+        );
+      case RouteName.COMPLAINTSSUBMISSOIN:
+        return MaterialPageRoute(
+          builder: ((context) => const ComplaintsSubmissionScreen()),
         );
       default:
         return notFound();
